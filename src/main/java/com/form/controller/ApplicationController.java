@@ -1,4 +1,4 @@
-package com.form;
+package com.form.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ApplicationController {
+	UserController controller = null;
+	
 	@RequestMapping("/")
 	public String index(Model model){
 		model.addAttribute("login", "Success Login page");
@@ -18,5 +20,11 @@ public class ApplicationController {
 		model.addAttribute("message", "sample");
 		
 		return "hello";
+	}
+	
+	@RequestMapping("/user")
+	public void user(Model user){
+		controller = new UserController();
+		controller.SetUser(user);
 	}
 }
