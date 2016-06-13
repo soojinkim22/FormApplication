@@ -5,10 +5,11 @@
  */
 package com.form.model;
 
+//import org.springframework.core.serializer;
 import java.sql.Timestamp;
 import javax.validation.constraints.NotNull;
 
-public class UserAnswer {
+public class UserAnswer { //implements Serializable{
 	@NotNull
 	private Integer 	user_id;		// ユーザID
 	private Integer 	content_id;		// 問題ID

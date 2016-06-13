@@ -6,11 +6,12 @@ import javax.sql.DataSource;
 
 import com.form.model.User;
 import com.form.model.UserMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UserDAO {
 
 	private  DataSource dataSource;
-	private  JdbcTmplate jdbcTemplateObject;
+	private  JdbcTemplate jdbcTemplateObject;
 
 	public void setDateSource(DataSource dataSource) {
 		this.dataSource = dataSource;
