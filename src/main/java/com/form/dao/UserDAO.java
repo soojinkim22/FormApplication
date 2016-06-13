@@ -4,13 +4,15 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import com.form.model.User;
 import com.form.model.UserMapper;
 
 public class UserDAO {
 
 	private  DataSource dataSource;
-	private  JdbcTmplate jdbcTemplateObject;
+	private  JdbcTemplate  jdbcTemplateObject;
 
 	public void setDateSource(DataSource dataSource) {
 		this.dataSource = dataSource;
@@ -49,9 +51,5 @@ public class UserDAO {
 				System.out.println("Update Record qith ID = " + id);
 				return;
 	}
-
-
-
-
 
 }
