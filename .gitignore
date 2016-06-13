@@ -46,3 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 target/classes/META-INF/maven/com.form/FormApplication/pom.properties
+src/main/java/com/form/dao/Database.java
+*.classpath
+target/classes/com/form/dao/Database.class
