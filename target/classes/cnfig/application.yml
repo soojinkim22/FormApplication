@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/mondaidb
+    username: root
+    password: shiho
+    driverClassName: com.mysql.jdbc.Driver
+
