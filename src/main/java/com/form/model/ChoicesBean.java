@@ -5,7 +5,7 @@ public class ChoicesBean {
 	private int content_id;		//問
 	private int question_id;	//小問
 	private int answer_id;		//解答番号
-	private char answer;		//解答
+	private String answer;		//解答
 	private boolean is_answer;		//正解
 
 	public int getContent_id(){
@@ -26,10 +26,10 @@ public class ChoicesBean {
 	public void setAnswer_id(int answer_id){
 		this.answer_id = answer_id;
 	}
-	public char getAnswer() {
+	public String getAnswer() {
 		return answer;
 	}
-	public void setAnswer(char answer) {
+	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
 	public boolean getIs_answer(){
