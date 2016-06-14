@@ -6,25 +6,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ApplicationController {
-	UserController controller = null;
+	//UserController controller = null;
 	
-	@RequestMapping("/")
-	public String index(Model model){
-		model.addAttribute("login", "Success Login page");
+	//@RequestMapping("/")
+	//public String index(Model model){
+	//	model.addAttribute("login", "Success Login page");
 		
-		return "index";
-	}
+	//	return "index";
+	//}
 	
-	@RequestMapping("/hello")
-	public String hello(Model model){
-		model.addAttribute("message", "sample");
+	//@RequestMapping("/hello")
+	//public String hello(Model model){
+	//	model.addAttribute("message", "sample");
 		
-		return "hello";
-	}
+	//	return "hello";
+	//}
 	
-	@RequestMapping("/user")
-	public void user(Model user){
-		controller = new UserController();
-		controller.SetUser(user);
-	}
+	//@RequestMapping("/user")
+	//public void user(Model user){
+	//	controller = new UserController();
+	//	controller.SetUser(user);
+	//}
 }
