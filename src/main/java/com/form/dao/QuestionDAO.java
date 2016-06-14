@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.form.model.Question;
+import com.form.model.QuestionMapper;
 
 public class QuestionDAO {
 	private DataSource dataSource;
@@ -25,13 +26,13 @@ public class QuestionDAO {
 	      return;
 	   }
 
-	   public List<Question> questionList(int content_id) {
+/*	   public List<Question> questionList(int content_id) {
 	      String SQL = "select * from question_tb where content_id = ?";
 	      List <Question> questions = jdbcTemplateObject.query(SQL, 
 	    		  					content_id,
 	                                new QuestionMapper());
 	      return questions;
-	   }
+	   }*/
 
 	   public void delete(int question_id){
 	      String SQL = "delete from question_tb where question_id = ?";
