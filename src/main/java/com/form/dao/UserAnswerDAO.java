@@ -5,7 +5,9 @@
  */
 package com.form.dao;
 
+import java.util.Calendar;
 import java.util.List;
+import java.sql.Timestamp;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import com.form.model.UserAnswer;
@@ -21,11 +23,16 @@ public class UserAnswerDAO {
 	}
 	
 	//public void create(Collection<T> collection) { -> user_answer_tb collection 
-	public void Create( String select_answer ) { // timestamp 使い方 (time)
-		String SQL = "insert into user_answer_tb (select_answer, time) values (?,?)";
+	public void InsertUserAnswer( Integer user_id, Integer content_id, Integer question_id, Integer answer_id, String select_answer ) { // timestamp 使い方 (time)
+		Calendar calendar = Calendar.getInstance();
+	    Timestamp time = new Timestamp(calendar.getTime().getTime());
+	    
+		String SQL = "insert into user_answer_tb (user_id, content_id, question_id, answer_id, select_answer, time) values (?,?,?,?,?,?)";
 	      
-	    jdbcTemplateObject.update( SQL, select_answer, "time");
-	    System.out.println("Created Record select_answer = " + select_answer + " time = " + "");
+	    jdbcTemplateObject.update( SQL, user_id, content_id, question_id, answer_id, select_answer, time);
+	    System.out.println("Created Record user_id = " + user_id +
+	    					"content_id = " + content_id + "question_id = " + question_id +   
+	    					"answer_id = " + answer_id + "select_answer = " + select_answer + " time = " + time);
 	    return;
     }
 	
@@ -39,9 +46,15 @@ public class UserAnswerDAO {
 		 return get_user_answer;
     }
 
-	public List<UserAnswer> ListStudents() {
-	    String 				SQL 				= "select select_answer, time from user_answer_tb";
-	    List<UserAnswer> 	list_user_answer 	= jdbcTemplateObject.query(SQL, new UserAnswerMapper());
+	public List<UserAnswer> ListUserAnswers( Integer user_id, Integer content_id, Integer question_id, Integer answer_id ) {
+	    String 				SQL 				= "select select_answer, time from user_answer_tb "
+	    										+ "where user_id = ? and"
+	    										+ "content_id = ? and "
+	    				 						+ "question_id = ? and "
+	    				 						+ "answer_id = ?";
+	    List<UserAnswer> 	list_user_answer 	= jdbcTemplateObject.query(SQL, new Object[]{user_id, content_id, question_id, answer_id}, new UserAnswerMapper());
+	    
+	    System.out.println(list_user_answer);
 	    return list_user_answer;
 	}
 	
