@@ -1,6 +1,6 @@
 package com.form.model;
 
-public class ChoicesBean {
+public class Choices {
 
 	private int content_id;		//問
 	private int question_id;	//小問
