@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.test.annotation.Timed;
 
-public class UserAnswer { //implements Serializable{
+public class UserAnswer implements Serializable { //{
 	@NotNull private Integer 	user_id;		// ユーザID
 	@NotNull private Integer 	content_id;		// 問題ID
 	@NotNull private Integer 	question_id;	// 小問ID
