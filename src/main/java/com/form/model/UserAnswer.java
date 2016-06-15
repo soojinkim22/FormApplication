@@ -5,19 +5,21 @@
  */
 package com.form.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 //import org.springframework.core.serializer;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.test.annotation.Timed;
+
 public class UserAnswer { //implements Serializable{
-	@NotNull
-	private Integer 	user_id;		// ユーザID
-	private Integer 	content_id;		// 問題ID
-	private Integer 	question_id;	// 小問ID
-	private Integer 	answer_id;		// 解答番号
-	private String 		select_answer;	// 選択した値
-	private Timestamp 	time;			// 提出した時間
+	@NotNull private Integer 	user_id;		// ユーザID
+	@NotNull private Integer 	content_id;		// 問題ID
+	@NotNull private Integer 	question_id;	// 小問ID
+	@NotNull private Integer 	answer_id;		// 解答番号
+	@NotNull private String 	select_answer;	// 選択した値
+	@NotNull private Timestamp 	time;			// 提出した時間
 	
 	public Integer getUser_id() { return user_id; }
 	public void setUser_id( Integer user_id ) { this.user_id = user_id; }

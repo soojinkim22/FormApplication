@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>ユーザ解答</title>
+</head>
+<body>
+	<form th:action="@{/form}" method="post" th:object="${useranswer}">
+    	<!-- radio test-->
+    	<div class="form-group">
+            <label class="control-label"><abbr title="required">*</abbr> Radio</label>
+            <div class="radio" th:each="item : ${radioItems}">
+              <label>
+                <input type="radio" name="select_answer" th:value="${item.value}" th:text="${item.key}" th:field="*{answer_id}" /> radio
+              </label>
+            </div>
+            <span th:if="${#fields.hasErrors('select_answer')}" th:errors="*{answer_id}" class="help-block">error!</span>
+        </div>
+        <button type="submit" class="btn btn-default">confirm</button>
+	</form>
+</body>
+</html>
+
+<!-- checkbox multi -->
+    	<!-- 
+        <div class="form-group">
+            <label class="control-label">Multi checkbox</label>
+            <div class="checkbox" th:each="item : ${checkItems}">
+              <label>
+                <input type="checkbox" name="fchecks" th:value="${item.value}" th:text="${item.key}" th:field="*{answer_id}">checkbox</input>
+              </label>
+            </div>
+            <span th:if="${#fields.hasErrors('fchecks')}" th:errors="*{answer_id}" class="help-block">error!</span>
+        </div> -->

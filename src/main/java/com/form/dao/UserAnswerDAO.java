@@ -10,13 +10,16 @@ import java.util.List;
 import java.sql.Timestamp;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
 import com.form.model.UserAnswer;
 import com.form.model.UserAnswerMapper;
 
+@Service
 public class UserAnswerDAO {
 	private DataSource 		dataSource;
 	private JdbcTemplate 	jdbcTemplateObject;
-	   
+   
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource 		= dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
